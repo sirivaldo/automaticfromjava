@@ -1,6 +1,12 @@
 
+import static com.oracle.webservices.internal.api.databinding.DatabindingModeFeature.builder;
+import static com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature.builder;
 import java.io.File;
+import static java.util.stream.DoubleStream.builder;
+import static java.util.stream.IntStream.builder;
+import static java.util.stream.Stream.builder;
 import org.eclipse.jgit.api.AddCommand;
+import org.eclipse.jgit.api.CommitCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
@@ -17,15 +23,35 @@ import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
 public class Mygit {
     
       public static void main(String[] args) throws Exception {                  
-               FileRepositoryBuilder builder = new FileRepositoryBuilder();
-Repository repository = builder.setGitDir(new File("/gitfromjava"))
-  .readEnvironment() // scan environment GIT_* variables
-  .findGitDir() // scan up the file system tree
-  .build();
+  Git git = Git.open(new File(".git"));
 
-Git git = new Git(repository);
+System.out.println("Repository: " + git.getRepository().toString());
+/*
+RevCommit rev = git.commit().setAmend(true)
+               .setAuthor("me", "me@mail.com")
+               .setMessage("Testing commit from jGit").call();
+
+git.close();
+*/
+
+
+
+//Git git = new Git(repository);
 AddCommand add = git.add();
-add.addFilepattern("/gitfromjavay").call();
+
+add = git.add();
+  
+//git.add().addFilepattern("C:/gitfromjava/siri.txt").call();
+//add.addFilepattern("C:/gitfromjava/siri.txt").call();
+//add.addFilepattern("siri.txt").call();
+add.addFilepattern(".").call();
+
+CommitCommand commit = git.commit();
+commit.setMessage("Adding from robot.").call();
+
+git.push().call();
+git.close();
+//testando
               }
       
       
