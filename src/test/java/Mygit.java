@@ -47,9 +47,8 @@ add = git.add();
 add.addFilepattern(".").call();
 
 CommitCommand commit = git.commit();
-commit.setMessage("Adding from robot.").call();
-
-git.push().call();
+commit.setMessage("Adding changes1.").call();
+//git.push().call();
 git.close();
 //testando
               }
