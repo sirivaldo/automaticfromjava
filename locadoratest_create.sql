@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2022-08-29 11:26:40.038
+-- Last modification date: 2022-08-29 11:30:08.845
 
 -- tables
 -- Table: Cidade
@@ -10,6 +10,13 @@ CREATE TABLE `Cidade` (
     `regiao` varchar(30) NOT NULL,
     `Estado_Codigo` int NOT NULL,
     CONSTRAINT `Cidade_pk` PRIMARY KEY (`Codigo`)
+);
+
+-- Table: Continente
+CREATE TABLE `Continente` (
+    `Codigo` int NOT NULL,
+    `nome` varchar(30) NOT NULL,
+    CONSTRAINT `Continente_pk` PRIMARY KEY (`Codigo`)
 );
 
 -- Table: Estado
@@ -37,4 +44,3 @@ ALTER TABLE `Estado` ADD CONSTRAINT `Estado_Pais` FOREIGN KEY `Estado_Pais` (`Pa
     REFERENCES `Pais` (`Codigo`);
 
 -- End of file.
-
