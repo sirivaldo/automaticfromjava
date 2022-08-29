@@ -9,7 +9,7 @@
     <Counters>
         <Counter>
             <Name>table</Name>
-            <Value>3</Value>
+            <Value>4</Value>
             <Prefix>t</Prefix>
         </Counter>
         <Counter>
@@ -19,7 +19,7 @@
         </Counter>
         <Counter>
             <Name>column</Name>
-            <Value>13</Value>
+            <Value>16</Value>
             <Prefix>c</Prefix>
         </Counter>
         <Counter>
@@ -89,7 +89,7 @@
         </Counter>
         <Counter>
             <Name>tableDisplay</Name>
-            <Value>3</Value>
+            <Value>4</Value>
             <Prefix>td</Prefix>
         </Counter>
         <Counter>
@@ -226,6 +226,42 @@
             <AdditionalSQLAfter></AdditionalSQLAfter>
             <Properties/>
         </Table>
+        <Table Id="t4">
+            <Name>3Pais</Name>
+            <Description></Description>
+            <Columns>
+                <Column Id="c14">
+                    <Name>Codigo</Name>
+                    <Type>int</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c15">
+                    <Name>nome</Name>
+                    <Type>varchar(30)</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name></Name>
+                <Columns>
+                    <Column>c14</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore></AdditionalSQLBefore>
+            <AdditionalSQLAfter></AdditionalSQLAfter>
+            <Properties/>
+        </Table>
     </Tables>
     <ExternalTables/>
     <Views/>
@@ -274,6 +310,16 @@
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t3</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td4">
+            <X>7036.5</X>
+            <Y>7007.5</Y>
+            <Width>163.0</Width>
+            <Height>73.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t4</Table>
             <FixedSize>false</FixedSize>
         </TableDisplay>
     </TableDisplays>
@@ -448,4 +494,3 @@
         </Types>
     </DefaultAdditionalProperties>
 </DatabaseModel>
-
